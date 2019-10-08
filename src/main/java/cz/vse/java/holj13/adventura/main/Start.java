@@ -8,10 +8,15 @@ import cz.vse.java.holj13.adventura.logika.Hra;
 import cz.vse.java.holj13.adventura.logika.IHra;
 import cz.vse.java.holj13.adventura.uiText.TextoveRozhrani;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.net.URL;
 
 
 /*******************************************************************************
@@ -38,6 +43,12 @@ public class Start extends Application
     }
     @Override
     public void start(Stage primaryStage) throws Exception{
+        FXMLLoader loader = new FXMLLoader() ;
+        loader.setLocation(getClass().getResource( "/scena.fxml"));
+        Parent rootComponent =  loader.load();
+
+        Scene scene = new Scene(rootComponent);
+        primaryStage.setScene(scene);
 
         primaryStage.show();
     }
