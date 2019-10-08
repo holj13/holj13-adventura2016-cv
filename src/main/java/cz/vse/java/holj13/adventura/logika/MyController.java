@@ -1,9 +1,12 @@
 package cz.vse.java.holj13.adventura.logika;
 
+import javafx.scene.control.Label;
+
 public class MyController {
 
+    public Label mujLabel;
+
     public void  klikNaButton(){
-        //tady se neco stane pri kliknuti
-        System.out.println("Funguje");
+        mujLabel.setText("Kliknuto - v poradku");
     }
 }
