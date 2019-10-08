@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -49,6 +50,11 @@ public class Start extends Application
 
         Scene scene = new Scene(rootComponent);
         primaryStage.setScene(scene);
+
+        primaryStage.setHeight(400);
+        primaryStage.setWidth(640);
+        primaryStage.setTitle("Adventura");
+        primaryStage.getIcons().addAll(new Image(getClass().getResourceAsStream("/4.png")));
 
         primaryStage.show();
     }
