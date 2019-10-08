@@ -11,7 +11,20 @@
             prefHeight="400.0" prefWidth="600.0"
             fx:controller="cz.vse.java.holj13.adventura.logika.MyController">
     <Label fx:id="mujLabel">Test</Label>
-    <Label>Test 2.</Label>
+    <Label fx:id="mujLabel2">Test 2.</Label>
     <Button onAction="#klikNaButton"> klikni</Button>
+
+    <BorderPane>
+        <top>
+            <Label>Top</Label>
+        </top>
+        <bottom>
+            <Label>Bottom</Label>
+        </bottom>
+    </BorderPane>
+
+    <GridPane>
+        <Label GridPane.columnIndex="9" GridPane.rowIndex="6"> Gridpane 9,6</Label>
+    </GridPane>
 
 </HBox>

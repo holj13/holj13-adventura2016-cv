@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 public class MyController {
 
     public Label mujLabel;
+    public Label mujLabel2;
 
     public void  klikNaButton(){
         mujLabel.setText("Kliknuto - v poradku");
