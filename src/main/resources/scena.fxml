@@ -1,30 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 
-<HBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            prefHeight="400.0" prefWidth="600.0"
-            fx:controller="cz.vse.java.holj13.adventura.logika.MyController">
-    <Label fx:id="mujLabel">Test</Label>
-    <Label fx:id="mujLabel2">Test 2.</Label>
-    <Button onAction="#klikNaButton"> klikni</Button>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<StackPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.java.holj13.adventura.logika.Controller">
+
+    <ImageView fx:id="obrazekLokace" />
+
 
     <BorderPane>
-        <top>
-            <Label>Top</Label>
-        </top>
         <bottom>
-            <Label>Bottom</Label>
+            <VBox alignment="CENTER" style="-fx-background-color: rgba(0,255,0,0.5);">
+                <Label fx:id="jmenoLokace">
+
+                </Label>
+                <Label fx:id="popisLokace">
+
+                </Label>
+            </VBox>
         </bottom>
+        <right>
+            <GridPane hgap="10" vgap="10">
+                <rowConstraints>
+                    <RowConstraints prefHeight="33"/>
+                    <RowConstraints prefHeight="33"/>
+                    <RowConstraints prefHeight="33"/>
+                </rowConstraints>
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="200"/>
+                </columnConstraints>
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+
+                </padding>
+                <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-background-color: rgba(0,255,0,0.5);">
+                    <Label>
+                        Východy
+                    </Label>
+                </VBox>
+                <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-background-color: rgba(0,255,0,0.5);">
+                    <Label>
+                        Předměty
+                    </Label>
+                </VBox>
+                <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-background-color: rgba(0,255,0,0.5);">
+                    <Label>
+                        Batoh
+                    </Label>
+                </VBox>
+            </GridPane>
+        </right>
     </BorderPane>
 
-    <GridPane>
-        <Label GridPane.columnIndex="9" GridPane.rowIndex="6"> Gridpane 9,6</Label>
-    </GridPane>
-
-</HBox>
+</StackPane>

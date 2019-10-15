@@ -6,6 +6,7 @@ package cz.vse.java.holj13.adventura.main;
 
 import cz.vse.java.holj13.adventura.logika.Hra;
 import cz.vse.java.holj13.adventura.logika.IHra;
+import cz.vse.java.holj13.adventura.logika.Controller;
 import cz.vse.java.holj13.adventura.uiText.TextoveRozhrani;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import java.io.InputStream;
 
 import java.net.URL;
 
@@ -36,26 +38,31 @@ public class Start extends Application
      */
     public static void main(String[] args)
     {
-        
-      //  IHra hra = new Hra();
-      //  TextoveRozhrani ui = new TextoveRozhrani(hra);
-      //  ui.hraj();
-        launch(args);
+        if(args.length > 0 && args[0].equals("text")) {
+            IHra hra = new Hra();
+            TextoveRozhrani ui = new TextoveRozhrani(hra);
+            ui.hraj();
+        } else {
+            launch(args);
+        }
     }
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader() ;
-        loader.setLocation(getClass().getResource( "/scena.fxml"));
-        Parent rootComponent =  loader.load();
+    public void start(Stage primaryStage) throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/scena.fxml"));
+        Parent rootComponent = loader.load();
 
         Scene scene = new Scene(rootComponent);
         primaryStage.setScene(scene);
 
-        primaryStage.setHeight(400);
-        primaryStage.setWidth(640);
-        primaryStage.setTitle("Adventura");
-        primaryStage.getIcons().addAll(new Image(getClass().getResourceAsStream("/4.png")));
+        IHra hra = new Hra();
+        Controller controller = loader.getController();
+        controller.setHra(hra);
 
+        primaryStage.setTitle("Karkulčino dobrodružství");
+        InputStream iconStream = getClass().getResourceAsStream("/4.png");
+        Image icon = new Image(iconStream);
+        primaryStage.getIcons().add(icon);
         primaryStage.show();
     }
 }
