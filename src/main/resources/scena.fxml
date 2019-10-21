@@ -10,21 +10,20 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.ColumnConstraints?>
-<StackPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171"
-           xmlns:fx="http://javafx.com/fxml/1" fx:controller="cz.vse.java.holj13.adventura.logika.Controller">
+<StackPane prefHeight="600.0" prefWidth="800.0"
+           xmlns="http://javafx.com/javafx/8.0.171"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="cz.vse.java.holj13.adventura.logika.Controller"
+           stylesheets="/styly.css" >
 
     <ImageView fx:id="obrazekLokace" />
 
 
     <BorderPane>
         <bottom>
-            <VBox alignment="CENTER" style="-fx-background-color: rgba(0,255,0,0.5);">
-                <Label fx:id="jmenoLokace">
-
-                </Label>
-                <Label fx:id="popisLokace">
-
-                </Label>
+            <VBox alignment="CENTER" styleClass="kontejner">
+                <Label fx:id="jmenoLokace" styleClass="velky-nadpis"/>
+                <Label fx:id="popisLokace" styleClass="nadpis"/>
             </VBox>
         </bottom>
         <right>
@@ -41,20 +40,14 @@
                     <Insets top="10" right="10" bottom="10" left="10" />
 
                 </padding>
-                <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-background-color: rgba(0,255,0,0.5);">
-                    <Label>
-                        Východy
-                    </Label>
+                <VBox GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="kontejner">
+                    <Label text="Východy" styleClass="nadpis"/>
                 </VBox>
-                <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-background-color: rgba(0,255,0,0.5);">
-                    <Label>
-                        Předměty
-                    </Label>
+                <VBox  GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="kontejner">
+                    <Label text="Předměty" styleClass="nadpis"/>
                 </VBox>
-                <VBox GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-background-color: rgba(0,255,0,0.5);">
-                    <Label>
-                        Batoh
-                    </Label>
+                <VBox  GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="kontejner">
+                    <Label text="Batoh" styleClass="nadpis"/>
                 </VBox>
             </GridPane>
         </right>
