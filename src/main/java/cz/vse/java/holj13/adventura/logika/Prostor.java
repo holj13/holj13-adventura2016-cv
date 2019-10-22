@@ -1,11 +1,7 @@
 package cz.vse.java.holj13.adventura.logika;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Set;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.HashMap;
+import java.util.*;
+
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
  *
@@ -23,7 +19,7 @@ public class Prostor {
     private String nazev;
     private String popis;
     private Set<Prostor> vychody;   // obsahuje sousední místnosti
- private Map<String, Vec> seznamVeci ;   // seznam věcí v prostoru
+    private Map<String, Vec> seznamVeci ;   // seznam věcí v prostoru
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
      * před domem"
@@ -191,6 +187,10 @@ public class Prostor {
             	nazvy += jmenoVeci + " ";
         }
         return nazvy;
+    }
+
+    public Collection<Vec> getSeznamVeci(){
+        return seznamVeci.values();
     }
      /**
      * Hledá věc daného jména a pokud je v prostoru a je přenositelná, tak ji vrátí a vymaže ze seznamu
