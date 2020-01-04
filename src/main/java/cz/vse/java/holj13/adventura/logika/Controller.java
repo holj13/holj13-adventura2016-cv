@@ -66,7 +66,7 @@ public class Controller {
             Label nazevProstoru = new Label(p.getNazev());
 
             ImageView vychodImageView = new ImageView();
-            Image vychodImage = new Image(getClass().getClassLoader().getResourceAsStream("\\" + p.getNazev() + ".jpg"));
+            Image vychodImage = new Image(getClass().getClassLoader().getResourceAsStream(p.getNazev() + ".jpg"));
             vychodImageView.setFitHeight(VYSKA_IKONY);
             vychodImageView.setFitWidth(SIRKA_IKONY);
             vychodImageView.setImage(vychodImage);
@@ -80,6 +80,8 @@ public class Controller {
         }
 
     }
+
+    //sdffsdfdsgndsknwegwe54444444
 
     private void pridejPredmetDoMisnosti(Vec vec){
         Label nazevVeci = new Label(vec.getJmeno());
